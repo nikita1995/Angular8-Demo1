@@ -1,0 +1,15 @@
+<div>
+    <h3 style="background-color: lightcyan">{{title}}</h3>
+    <br>
+    <br>
+    User Name : {{userName}}
+    <br>
+    Type To Change Title :
+    <input type="text" [(ngModel)]="title"/>
+    <br>
+    <br>
+    <button (click)="btnClick()" [disabled]="btnValue">Click to Change Title</button>
+    <button style="margin-left: 1%" (click)="onResetClick()">Reset</button>
+
+    <br>
+</div>

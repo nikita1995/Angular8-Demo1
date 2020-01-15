@@ -14,6 +14,17 @@ describe('AppComponent', () => {
     }).compileComponents();
   }));
 
+  it('should return sum of two nos', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.debugElement.componentInstance;
+    expect(app.sum(5,7).toEqual(12))
+  })
+  it('should return sum of two nos', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.debugElement.componentInstance;
+    app.getCount(5);
+    expect(app.count).toEqual(5)
+  })
   it('should create the app', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;

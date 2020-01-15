@@ -1,0 +1,35 @@
+<style>
+    div{
+        text-align: center;
+        padding: 2%;
+    }
+    form {
+        text-align: center;
+        padding: 2%;
+    }
+    form > label {
+        margin-top: 1%;
+        margin-bottom: 1%;
+    }
+</style>
+<div>
+    <h3> Post To Typicode Demo</h3>
+    <form [formGroup]="frm" (ngSubmit)="submit()">
+        <label>Enter Title:</label>
+        <input name="title" formControlName="title"/>
+        <span [hidden]="frm.controls['title'].valid">**</span>
+        <br/> <br/>
+
+        <label>Enter Body:</label>
+        <input name="body" formControlName="body"/>
+        <span [hidden]="frm.controls['body'].valid">**</span>
+        <br/>
+        <input type="submit" value="Submit"/>
+        <br/>
+    </form>
+    <h2>Post Status: {{msg}}</h2>
+    <p>
+        {{dataArr | json}}
+    </p>
+
+</div>

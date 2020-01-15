@@ -1,0 +1,13 @@
+<div>
+    <h3>Data Service Demo</h3>
+    Set UserName: <input [(ngModel)]="un"/>
+    <br/><br/>
+    <button (click)="setValue()">Set Value</button>
+    <button style="margin-left: 5px" (click)="getValue()">Get Value</button>
+    <br/><br/>
+    The New Value = {{unFromService}}
+    <br/>
+    trim2length pipe : {{'India is best' | trim2length:5 }}
+    <br/>
+    trim2length pipe : {{5333334 | trim2length:5 }}
+</div>

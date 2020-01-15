@@ -1,0 +1,22 @@
+<div style="background-color: lightsalmon">
+    Refresh List : <button (click)="refresh()">Refresh</button>
+    <br/>
+    Select Country :
+    <select (change)="onCountryChange($event)">
+        <option *ngFor="let c of countries; trackBy: trackByCode" value={{c.code}}>
+            {{c.name}}
+        </option>
+    </select>
+    <br/>
+    <!-- <div *ngFor = "let c of countryList">
+            <div *ngIf="c !== 'USA'">Hello from {{c}}</div>
+    </div> -->
+    
+    <div [ngSwitch]="country" [ngClass]= "{'in': country == 'in','us': country == 'us', 'ch': country == 'ch'}">
+        <div *ngSwitchCase="'in'">Hello From India..</div>
+        <div *ngSwitchCase="'ch'">Hello From China..</div>
+        <div *ngSwitchCase="'us'">Hello From USA..</div>
+        <div *ngSwitchCase="'aus'">Hello From Australia..</div>
+        <div *ngSwitchDefault>No Information</div>
+    </div>
+</div>

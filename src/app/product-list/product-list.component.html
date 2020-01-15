@@ -1,0 +1,36 @@
+<div>
+    <h3>Product List</h3>
+    <table style="background-color: lightcoral;" border="1" align="center">
+        <thead>
+            <tr>
+                <th>Product ID</th>
+                <th>Product Name</th>
+                <th>Product Price</th>
+                <th>Details</th>
+                <th>Product Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let p of products">
+                <td>{{p.pid}}</td>
+                <td>{{p.pname}}</td>
+                <td>{{p.price}}</td>
+                <td><a [routerLink]="['product-details',p.pid]" [queryParams]="{prdName: p.pname}">Details</a></td>
+                <td><button (click)="showDetails(p)">Details</button></td>
+            </tr>
+            <!-- <tr>
+                <td>1002</td>
+                <td>Keyboard</td>
+                <td>500</td>
+                <td><a [routerLink]="['product-details','1002']" [queryParams]="{prdName: 'Keyboard'}">Details</a></td>
+            </tr>
+            <tr>
+                <td>1003</td>
+                <td>Monitor</td>
+                <td>1000</td>
+                <td><a [routerLink]="['product-details','1003']" [queryParams]="{prdName: 'Monitor'}">Details</a></td>
+            </tr> -->
+        </tbody>
+    </table>
+    <router-outlet></router-outlet>
+</div>
